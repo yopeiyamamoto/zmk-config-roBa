@@ -146,7 +146,7 @@
             bindings = <
 &trans  &trans        &trans        &trans        &trans                             &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2          &bt BT_SEL 3              &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans  &trans      &trans         &trans            &kp BACKSPACE      &kp LA(LS(NUMBER_3))  &kp B                     &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &kp LG(LA(V))  &kp LC(LG(LEFT))  &kp LG(LS(RIGHT))  &kp LA(LS(AT_SIGN))   &kp LA(LS(LEFT_BRACKET))  &bt BT_CLR
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &kp LG(LA(V))  &kp LC(LG(LEFT))  &kp LG(LC(RIGHT))  &kp LA(LG(AT_SIGN))   &kp LA(LG(LEFT_BRACKET))  &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans         &kp KP_NUMBER_3                                                                      &bt BT_CLR_ALL
             >;
         };
