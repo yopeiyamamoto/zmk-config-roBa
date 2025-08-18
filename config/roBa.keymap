@@ -40,18 +40,24 @@
         };
 
         muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
+            bindings = <&to_layer_0 ESCAPE>;
             key-positions = <11 10>;
         };
 
         double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
+            bindings = <&kp PERIOD>;
             key-positions = <20 21>;
         };
 
         eq {
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
+        };
+
+        toten {
+            bindings = <&kp COMMA>;
+            key-positions = <32 33>;
+            layers = <0>;
         };
     };
 
