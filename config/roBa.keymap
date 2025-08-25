@@ -41,11 +41,11 @@
 
         muhennkann {
             bindings = <&to_layer_0 ESCAPE>;
-            key-positions = <11 10>;
+            key-positions = <0 1>;
         };
 
         double_quotation {
-            bindings = <&kp PERIOD>;
+            bindings = <&kp LG(RIGHT)>;
             key-positions = <20 21>;
         };
 
@@ -58,6 +58,11 @@
             bindings = <&kp COMMA>;
             key-positions = <32 33>;
             layers = <0>;
+        };
+
+        desktop {
+            bindings = <&kp LG(LEFT)>;
+            key-positions = <11 10>;
         };
     };
 
