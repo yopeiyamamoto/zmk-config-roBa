@@ -62,7 +62,7 @@
 
         desktop {
             bindings = <&kp LC(LEFT)>;
-            key-positions = <11 10>;
+            key-positions = <16 17>;
         };
     };
 
