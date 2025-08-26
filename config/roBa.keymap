@@ -45,7 +45,7 @@
         };
 
         double_quotation {
-            bindings = <&kp LG(RIGHT)>;
+            bindings = <&kp LC(RIGHT)>;
             key-positions = <20 21>;
         };
 
@@ -61,7 +61,7 @@
         };
 
         desktop {
-            bindings = <&kp LG(LEFT)>;
+            bindings = <&kp LC(LEFT)>;
             key-positions = <11 10>;
         };
     };
