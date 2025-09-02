@@ -113,8 +113,8 @@
             bindings = <
 &kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                                      &kp AT            &kp AMPERSAND      &kp HASH              &kp LEFT_BRACE         &kp RIGHT_BRACE
 &kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE     &kp TILDE         &kp QUESTION       &kp EXCL              &kp DOLLAR             &kp LEFT_COMMAND
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL                    &kp PIPE           &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_ALT
-&trans                      &trans           &kp KP_NUMBER_0  &trans           &trans        &trans                       &kp DOUBLE_QUOTES  &kp PERCENT                                                                       &kp LEFT_CONTROL
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL                    &kp APOS           &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_ALT
+&trans                      &kp PIPE         &kp KP_NUMBER_0  &trans           &trans        &trans                       &kp DOUBLE_QUOTES  &kp PERCENT                                                                       &kp LEFT_CONTROL
             >;
         };
 
@@ -149,10 +149,10 @@
 
         layer_6 {
             bindings = <
-&trans  &trans        &trans        &trans        &trans                             &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2          &bt BT_SEL 3              &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &trans      &trans         &trans            &kp BACKSPACE      &kp LA(LS(NUMBER_3))  &kp B                     &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &kp LG(LA(V))  &kp LC(LG(LEFT))  &kp LG(LC(RIGHT))  &kp LA(LG(AT_SIGN))   &kp LA(LG(LEFT_BRACKET))  &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans         &kp KP_NUMBER_3                                                                      &bt BT_CLR_ALL
+&trans  &kp LA(LG(KP_N7))        &kp LA(LC(ENTER))      &kp LA(LG(KP_N9))  &trans                             &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2              &bt BT_SEL 3               &bt BT_SEL 4
+&trans  &kp LA(LG(BACKSPACE))    &kp LA(LG(SPACE))      &kp LA(LG(ENTER))  &trans  &trans      &trans         &trans            &kp BACKSPACE      &kp LA(LS(NUMBER_3))      &kp B                      &trans
+&trans  &kp LA(LG(KP_NUMBER_1))  &kp LC(LA(BACKSPACE))  &kp KP_N3          &trans  &trans      &kp LG(LA(V))  &kp LC(LG(LEFT))  &kp LG(LC(RIGHT))  &kp LA(LG(LEFT_BRACKET))  &kp LA(LG(RIGHT_BRACKET))  &bt BT_CLR
+&trans  &trans                   &kp LG(LA(PERIOD))     &trans             &trans  &trans      &kp KP_ENTER   &kp KP_NUMBER_3                                                                           &bt BT_CLR_ALL
             >;
         };
     };
