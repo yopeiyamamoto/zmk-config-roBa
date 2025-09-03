@@ -151,7 +151,7 @@
             bindings = <
 &trans             &kp LA(LG(KP_N7))        &kp LA(LC(BACKSPACE))  &kp LA(LG(KP_N9))  &trans                                        &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2              &bt BT_SEL 3               &bt BT_SEL 4
 &kp LC(BACKSPACE)  &kp LA(LG(BACKSPACE))    &kp LA(LG(SPACE))      &kp LA(LG(ENTER))  &kp LC(ENTER)      &trans      &trans         &trans            &kp BACKSPACE      &kp LA(LS(NUMBER_3))      &kp B                      &trans
-&kp LG(LA(LC(Q)))  &kp LA(LG(KP_NUMBER_1))  &kp LC(LA(ENTER))      &kp KP_N3          &kp LC(LA(LG(P)))  &trans      &kp LG(LA(V))  &kp LC(LG(LEFT))  &kp LG(LC(RIGHT))  &kp LA(LG(LEFT_BRACKET))  &kp LA(LG(RIGHT_BRACKET))  &bt BT_CLR
+&kp LG(LA(LC(Q)))  &kp LA(LG(KP_NUMBER_1))  &kp LC(LA(ENTER))      &kp KP_N3          &kp LC(LA(LG(A)))  &trans      &kp LG(LA(V))  &kp LC(LG(LEFT))  &kp LG(LC(RIGHT))  &kp LA(LG(LEFT_BRACKET))  &kp LA(LG(RIGHT_BRACKET))  &bt BT_CLR
 &trans             &trans                   &kp LG(LA(PERIOD))     &trans             &trans             &trans      &kp KP_ENTER   &kp KP_NUMBER_3                                                                           &bt BT_CLR_ALL
             >;
         };
