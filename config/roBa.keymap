@@ -111,10 +111,10 @@
 
         NUM {
             bindings = <
-&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                                      &kp AT            &kp AMPERSAND      &kp HASH              &kp LEFT_BRACE         &kp RIGHT_BRACE
-&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE     &kp TILDE         &kp QUESTION       &kp EXCL              &kp DOLLAR             &kp LEFT_COMMAND
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL                    &kp APOS           &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_ALT
-&trans                      &kp PIPE         &kp KP_NUMBER_0  &trans           &trans        &trans                       &kp DOUBLE_QUOTES  &kp PERCENT                                                                       &kp LEFT_CONTROL
+&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                             &kp AT            &kp AMPERSAND      &kp HASH              &kp LEFT_BRACE         &kp RIGHT_BRACE
+&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp UNDERSCORE      &kp DOUBLE_QUOTES  &kp TILDE         &kp QUESTION       &kp EXCL              &kp DOLLAR             &kp LEFT_COMMAND
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL           &kp APOS           &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_ALT
+&trans                      &kp PIPE         &kp KP_NUMBER_0  &trans           &trans        &trans              &kp INT_YEN        &kp PERCENT                                                                       &kp LEFT_CONTROL
             >;
         };
 
