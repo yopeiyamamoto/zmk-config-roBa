@@ -64,6 +64,21 @@
             bindings = <&kp LC(LEFT)>;
             key-positions = <16 17>;
         };
+
+        coron {
+            bindings = <&kp COLON>;
+            key-positions = <22 23>;
+        };
+
+        right {
+            bindings = <&kp LC(RIGHT)>;
+            key-positions = <15 14>;
+        };
+
+        left {
+            bindings = <&kp LC(LEFT)>;
+            key-positions = <10 11>;
+        };
     };
 
     macros {
