@@ -54,12 +54,6 @@
             key-positions = <24 25>;
         };
 
-        toten {
-            bindings = <&kp COMMA>;
-            key-positions = <32 33>;
-            layers = <0>;
-        };
-
         desktop {
             bindings = <&kp LC(LEFT)>;
             key-positions = <16 17>;
@@ -68,6 +62,21 @@
         coron {
             bindings = <&kp COLON>;
             key-positions = <22 23>;
+        };
+
+        comma {
+            bindings = <&kp COMMA>;
+            key-positions = <34 35>;
+        };
+
+        PT_p {
+            bindings = <&kp P>;
+            key-positions = <4 14>;
+        };
+
+        PT_semicoron {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <14 26>;
         };
     };
 
@@ -156,6 +165,15 @@
 &kp LC(BACKSPACE)  &kp LA(LG(BACKSPACE))    &kp LA(LG(SPACE))      &kp LA(LG(ENTER))  &kp LC(ENTER)         &kp LC(RIGHT_BRACKET)          &kp LG(LC(BACKSLASH))  &kp LC(BACKSLASH)  &kp BACKSPACE      &kp LA(LS(NUMBER_3))      &kp B                      &trans
 &kp LG(LA(LC(Q)))  &kp LA(LG(KP_NUMBER_1))  &kp LC(LA(ENTER))      &kp KP_N3          &kp LC(LA(LG(A)))     &kp LG(LC(RIGHT_BRACKET))      &kp LG(LA(V))          &kp LC(LG(LEFT))   &kp LG(LC(RIGHT))  &kp LA(LG(LEFT_BRACKET))  &kp LA(LG(RIGHT_BRACKET))  &bt BT_CLR
 &trans             &trans                   &kp LG(LA(PERIOD))     &trans             &trans                &trans                         &kp KP_ENTER           &kp KP_NUMBER_3                                                                            &bt BT_CLR_ALL
+            >;
+        };
+
+        iPadmini {
+            bindings = <
+&kp Q           &kp W         &kp E    &kp R                   &kp T                                                        &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A           &kp S         &kp D    &kp F                   &kp G        &kp LG(Z)                        &kp DELETE     &kp H        &kp J  &lt 5 K    &kp L    &mt LEFT_COMMAND MINUS
+&kp LEFT_SHIFT  &kp Z         &kp C    &kp V                   &kp B        &kp SEMICOLON                    &kp COLON      &kp N        &kp M  &kp COMMA  &kp DOT  &kp LEFT_ALT
+&kp X           &kp LEFT_ALT  &kp TAB  &lt_to_layer_0 6 LANG2  &lt 2 SPACE  &lt_to_layer_0 3 LANGUAGE_1      &kp BACKSPACE  &lt 1 ENTER                             &kp LEFT_CONTROL
             >;
         };
     };
