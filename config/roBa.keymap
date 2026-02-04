@@ -80,7 +80,7 @@
         };
 
         scroll {
-            bindings = <&to 5>;
+            bindings = <&lt 5 LANG9>;
             key-positions = <19 20>;
         };
     };
