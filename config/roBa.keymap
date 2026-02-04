@@ -78,6 +78,11 @@
             bindings = <&kp SEMICOLON>;
             key-positions = <14 26>;
         };
+
+        scroll {
+            bindings = <&to 5>;
+            key-positions = <19 20>;
+        };
     };
 
     macros {
