@@ -62,4 +62,3 @@
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
     };
-};
