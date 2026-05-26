@@ -10,133 +10,185 @@ Wiki
 Security and quality
 Insights
 Settings
- main
-Breadcrumbs
-zmk-config-roBa/boards/shields/roBa
-/roBa_R.overlay
-t
-T
-Latest commit
-yopeiyamamoto
-Restore stable trackball overlay
-b6b0e54
- · 
-History
-53 lines (46 loc) · 1.23 KB
-File metadata and controls
-Code
-Blame
-Raw
+.github/workflows/build.yml
+Restore stable trackball keymap settings #88
+Re-run jobs
+Summary
+All jobs
+build
+Fetch Build Keyboards
+Build (seeeduino_xiao_ble, roBa_R, studio-rpc-usb-uart)
+Build (seeeduino_xiao_ble, roBa_L)
+Build (seeeduino_xiao_ble, settings_reset)
+Merge Output Artifacts
+Run details
+Usage
+Workflow file
+Annotations
+1 error and 1 warning
+build / Build (seeeduino_xiao_ble, roBa_L)
+failed  in 1m 20s
+Set up job
+1s
+Initialize containers
+25s
+Checkout
+0s
+Create build directory
+1s
+Prepare variables
+0s
+Copy config files to isolated temporary directory
+0s
+Cache west modules
+24s
+West Init
+0s
+West Update
+17s
+West Zephyr export
+1s
+West Build (roBa_L - seeeduino_xiao_ble)
+2s
 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
+Run west build -s zmk/app -d "/tmp/tmp.W32RD8KOpf" -b "seeeduino_xiao_ble"  -- -DZMK_CONFIG=/tmp/zmk-config/config -DSHIELD="roBa_L" -DZMK_EXTRA_MODULES='/__w/zmk-config-roBa/zmk-config-roBa' 
+
 12
++ west build -s zmk/app -d /tmp/tmp.W32RD8KOpf -b seeeduino_xiao_ble -- -DZMK_CONFIG=/tmp/zmk-config/config -DSHIELD=roBa_L -DZMK_EXTRA_MODULES=/__w/zmk-config-roBa/zmk-config-roBa
+
 13
+-- west build: generating a build system
+
 14
+Loading Zephyr default modules (Zephyr base).
+
 15
+-- Application: /tmp/zmk-config/zmk/app
+
 16
+-- CMake version: 3.31.6
+
 17
+-- Found Python3: /usr/bin/python3 (found suitable version "3.12.3", minimum required is "3.8") found components: Interpreter
+
 18
+-- Cache files will be written to: /tmp/zmk-config/zephyr/.cache
+
 19
+-- Zephyr version: 3.5.0 (/tmp/zmk-config/zephyr)
+
 20
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+
 21
+-- Adding /__w/zmk-config-roBa/zmk-config-roBa/boards/shields/roBa
+
 22
+-- ZMK Config directory: /tmp/zmk-config/config
+
 23
+-- Using keymap file: /tmp/zmk-config/config/roBa.keymap
+
 24
+-- Board: seeeduino_xiao_ble
+
 25
+-- Shield(s): roBa_L
+
 26
+-- ZEPHYR_TOOLCHAIN_VARIANT not set, trying to locate Zephyr SDK
+
 27
+-- Found host-tools: zephyr 0.16.9 (/opt/zephyr-sdk-0.16.9)
+
 28
+-- Found toolchain: zephyr 0.16.9 (/opt/zephyr-sdk-0.16.9)
+
 29
+-- Found Dtc: /opt/zephyr-sdk-0.16.9/sysroots/x86_64-pokysdk-linux/usr/bin/dtc (found suitable version "1.6.0", minimum required is "1.4.6")
+
 30
+-- Found BOARD.dts: /tmp/zmk-config/zephyr/boards/arm/seeeduino_xiao_ble/seeeduino_xiao_ble.dts
+
 31
+-- Found devicetree overlay: /tmp/zmk-config/zmk/app/boards/seeeduino_xiao_ble.overlay
+
 32
+-- Found devicetree overlay: /__w/zmk-config-roBa/zmk-config-roBa/boards/shields/roBa/roBa_L.overlay
+
 33
+-- Found devicetree overlay: /tmp/zmk-config/config/roBa.keymap
+
 34
+In file included from <command-line>:
+
 35
+/tmp/zmk-config/config/roBa.keymap:83:10: fatal error: roBa.dtsi: No such file or directory
+
 36
+   83 | #include "roBa.dtsi"
+
 37
+      |          ^~~~~~~~~~~
+
 38
+compilation terminated.
+
 39
+CMake Error at /tmp/zmk-config/zephyr/cmake/modules/extensions.cmake:3885 (message):
+
 40
+  failed to preprocess devicetree files (error code 1):
+
 41
+  /tmp/zmk-config/zephyr/boards/arm/seeeduino_xiao_ble/seeeduino_xiao_ble.dts;/tmp/zmk-config/zmk/app/boards/seeeduino_xiao_ble.overlay;/__w/zmk-config-roBa/zmk-config-roBa/boards/shields/roBa/roBa_L.overlay;/tmp/zmk-config/config/roBa.keymap
+
 42
+Call Stack (most recent call first):
+
 43
+  /tmp/zmk-config/zephyr/cmake/modules/dts.cmake:226 (zephyr_dt_preprocess)
+
 44
+  /tmp/zmk-config/zephyr/cmake/modules/zephyr_default.cmake:129 (include)
+
 45
+  /tmp/zmk-config/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)
+
 46
+  /tmp/zmk-config/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)
+
 47
+  CMakeLists.txt:9 (find_package)
+
 48
+
+
 49
+
+
 50
+-- Configuring incomplete, errors occurred!
+
 51
+FATAL ERROR: command exited with status 1: /usr/local/bin/cmake -DWEST_PYTHON=/usr/bin/python3 -B/tmp/tmp.W32RD8KOpf -GNinja -DBOARD=seeeduino_xiao_ble -DZMK_CONFIG=/tmp/zmk-config/config -DSHIELD=roBa_L -DZMK_EXTRA_MODULES=/__w/zmk-config-roBa/zmk-config-roBa -S/tmp/zmk-config/zmk/app
+
 52
-53
-#include "roBa.dtsi"
+Error: Process completed with exit code 1.
 
-
-&default_transform {
-    col-offset = <6>;
-};
-
-
-&kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH>
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            ;
-};
-
-
-&pinctrl {
-    spi0_default: spi0_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
-        };
-    };
-
-
-    spi0_sleep: spi0_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
-            low-power-enable;
-        };
-    };
-};
-
-
-&xiao_serial { status = "disabled"; };
-
-
-&spi0 {
-    status = "okay";
-    compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
-
-
-    trackball: trackball@0 {
-        status = "okay";
-        compatible = "pixart,pmw3610";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    };
-};
+roBa_L - seeeduino_xiao_ble Kconfig file
+0s
+roBa_L - seeeduino_xiao_ble Devicetree file
+0s
+Rename artifacts
+0s
+Archive (roBa_L - seeeduino_xiao_ble)
+0s
+Post Cache west modules
+0s
+Post Checkout
+0s
+Stop containers
+7s
+Complete job
+0s
