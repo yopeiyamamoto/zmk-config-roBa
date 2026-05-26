@@ -1,5 +1,4 @@
 #include "roBa.dtsi"
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &default_transform {
     col-offset = <6>;
@@ -13,25 +12,6 @@
             , <&xiao_d 7 GPIO_ACTIVE_HIGH>
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
             ;
-};
-
-/ {
-    ib_tog_layer: ib_tog_layer {
-        compatible = "zmk,input-behavior-tog-layer";
-        #binding-cells = <1>;
-        time-to-live-ms = <10000>;
-    };
-
-    trackball_listener {
-        status = "okay";
-        compatible = "zmk,input-behavior-listener";
-        device = <&trackball>;
-        layers = <0 4>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        bindings = <&ib_tog_layer 4>;
-    };
 };
 
 &pinctrl {
@@ -69,5 +49,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        automouse-layer = <4>;
+        scroll-layers = <5>;
     };
 };
