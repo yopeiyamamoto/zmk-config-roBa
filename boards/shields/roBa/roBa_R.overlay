@@ -14,15 +14,17 @@
             ;
 };
 
-&zip_temp_layer {
-    excluded-positions = <
-        18 // J
-        19 // K
-        20 // l
-    >;
-};
-
 / {
+    /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        excluded-positions = <
+            18 // J
+            19 // K
+            20 // L
+        >;
+    };
+
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
@@ -60,5 +62,4 @@
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
-
-    };
+};
