@@ -1,194 +1,185 @@
-Skip to content
-yopeiyamamoto
-zmk-config-roBa
-Repository navigation
-Code
-Pull requests
-Actions
-Projects
-Wiki
-Security and quality
-Insights
-Settings
-.github/workflows/build.yml
-Restore stable trackball keymap settings #88
-Re-run jobs
-Summary
-All jobs
-build
-Fetch Build Keyboards
-Build (seeeduino_xiao_ble, roBa_R, studio-rpc-usb-uart)
-Build (seeeduino_xiao_ble, roBa_L)
-Build (seeeduino_xiao_ble, settings_reset)
-Merge Output Artifacts
-Run details
-Usage
-Workflow file
-Annotations
-1 error and 1 warning
-build / Build (seeeduino_xiao_ble, roBa_L)
-failed  in 1m 20s
-Set up job
-1s
-Initialize containers
-25s
-Checkout
-0s
-Create build directory
-1s
-Prepare variables
-0s
-Copy config files to isolated temporary directory
-0s
-Cache west modules
-24s
-West Init
-0s
-West Update
-17s
-West Zephyr export
-1s
-West Build (roBa_L - seeeduino_xiao_ble)
-2s
-1
-Run west build -s zmk/app -d "/tmp/tmp.W32RD8KOpf" -b "seeeduino_xiao_ble"  -- -DZMK_CONFIG=/tmp/zmk-config/config -DSHIELD="roBa_L" -DZMK_EXTRA_MODULES='/__w/zmk-config-roBa/zmk-config-roBa' 
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
-12
-+ west build -s zmk/app -d /tmp/tmp.W32RD8KOpf -b seeeduino_xiao_ble -- -DZMK_CONFIG=/tmp/zmk-config/config -DSHIELD=roBa_L -DZMK_EXTRA_MODULES=/__w/zmk-config-roBa/zmk-config-roBa
+&mt {
+    flavor = "balanced";
+    quick-tap-ms = <0>;
+};
 
-13
--- west build: generating a build system
+&trackball {
+    automouse-layer = <4>;
+    scroll-layers = <5>;
 
-14
-Loading Zephyr default modules (Zephyr base).
+    // arrows {
+    //     layers = <3>;
+    //     bindings =
+    //         <&kp RIGHT_ARROW>,
+    //         <&kp LEFT_ARROW>,
+    //         <&kp UP_ARROW>,
+    //         <&kp DOWN_ARROW>;
+    //     tick = <10>;
+    //     wait-ms = <5>;
+    //     tap-ms = <5>;
+    // };
+};
 
-15
--- Application: /tmp/zmk-config/zmk/app
+/ {
+    combos {
+        compatible = "zmk,combos";
 
-16
--- CMake version: 3.31.6
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
+        };
 
-17
--- Found Python3: /usr/bin/python3 (found suitable version "3.12.3", minimum required is "3.8") found components: Interpreter
+        shift_tab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <12 13>;
+        };
 
-18
--- Cache files will be written to: /tmp/zmk-config/zephyr/.cache
+        muhennkann {
+            bindings = <&to_layer_0 ESCAPE>;
+            key-positions = <0 1>;
+        };
 
-19
--- Zephyr version: 3.5.0 (/tmp/zmk-config/zephyr)
+        double_quotation {
+            bindings = <&kp LC(RIGHT)>;
+            key-positions = <20 21>;
+        };
 
-20
--- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+        eq {
+            bindings = <&kp EQUAL>;
+            key-positions = <24 25>;
+        };
 
-21
--- Adding /__w/zmk-config-roBa/zmk-config-roBa/boards/shields/roBa
+        desktop {
+            bindings = <&kp LC(LEFT)>;
+            key-positions = <16 17>;
+        };
 
-22
--- ZMK Config directory: /tmp/zmk-config/config
+        coron {
+            bindings = <&kp COLON>;
+            key-positions = <22 23>;
+        };
 
-23
--- Using keymap file: /tmp/zmk-config/config/roBa.keymap
+        comma {
+            bindings = <&kp COMMA>;
+            key-positions = <34 35>;
+        };
 
-24
--- Board: seeeduino_xiao_ble
+        PT_p {
+            bindings = <&kp P>;
+            key-positions = <4 14>;
+        };
 
-25
--- Shield(s): roBa_L
+        PT_semicoron {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <14 26>;
+        };
 
-26
--- ZEPHYR_TOOLCHAIN_VARIANT not set, trying to locate Zephyr SDK
+        scroll {
+            bindings = <&lt 5 LANG9>;
+            key-positions = <19 20>;
+        };
+    };
 
-27
--- Found host-tools: zephyr 0.16.9 (/opt/zephyr-sdk-0.16.9)
+    macros {
+        to_layer_0: to_layer_0 {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "TO_LAYER_0";
+        };
+    };
 
-28
--- Found toolchain: zephyr 0.16.9 (/opt/zephyr-sdk-0.16.9)
+    behaviors {
+        lt_to_layer_0: lt_to_layer_0 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_0";
+            bindings = <&mo>, <&to_layer_0>;
 
-29
--- Found Dtc: /opt/zephyr-sdk-0.16.9/sysroots/x86_64-pokysdk-linux/usr/bin/dtc (found suitable version "1.6.0", minimum required is "1.4.6")
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+    };
 
-30
--- Found BOARD.dts: /tmp/zmk-config/zephyr/boards/arm/seeeduino_xiao_ble/seeeduino_xiao_ble.dts
+    keymap {
+        compatible = "zmk,keymap";
 
-31
--- Found devicetree overlay: /tmp/zmk-config/zmk/app/boards/seeeduino_xiao_ble.overlay
+        default_layer {
+            bindings = <
+&kp Q           &kp W         &kp E    &kp R                   &kp T                                                        &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A           &kp S         &kp D    &kp F                   &kp G        &kp LG(Z)                        &kp DELETE     &kp H        &kp J  &kp K      &kp L    &mt LEFT_COMMAND MINUS
+&kp LEFT_SHIFT  &kp Z         &kp C    &kp V                   &kp B        &kp SEMICOLON                    &kp COLON      &kp N        &kp M  &kp COMMA  &kp DOT  &kp LEFT_ALT
+&kp X           &kp LEFT_ALT  &kp TAB  &lt_to_layer_0 6 LANG2  &lt 2 SPACE  &lt_to_layer_0 3 LANGUAGE_1      &kp BACKSPACE  &lt 1 ENTER                             &kp LEFT_CONTROL
+            >;
+        };
 
-32
--- Found devicetree overlay: /__w/zmk-config-roBa/zmk-config-roBa/boards/shields/roBa/roBa_L.overlay
+        FUNCTION {
+            bindings = <
+&trans  &trans  &trans  &trans               &trans                       &kp F1            &kp F2           &kp F3        &kp F4      &kp F5
+&trans  &trans  &trans  &trans               &trans  &trans      &kp F13  &kp F6            &kp F7           &kp F8        &kp F9      &kp F10
+&trans  &trans  &trans  &trans               &trans  &trans      &trans   &kp K_PLAY_PAUSE  &kp C_VOLUME_UP  &kp C_VOL_DN  &kp K_MUTE  &kp F11
+&trans  &trans  &trans  &kp INTERNATIONAL_1  &trans  &trans      &trans   &trans                                                       &kp F12
+            >;
+        };
 
-33
--- Found devicetree overlay: /tmp/zmk-config/config/roBa.keymap
+        NUM {
+            bindings = <
+&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                             &kp AT            &kp AMPERSAND      &kp HASH              &kp LEFT_BRACE         &kp RIGHT_BRACE
+&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp UNDERSCORE      &kp DOUBLE_QUOTES  &kp TILDE         &kp QUESTION       &kp EXCL              &kp DOLLAR             &kp LEFT_COMMAND
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL           &kp APOS           &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_ALT
+&trans                      &kp PIPE         &kp KP_NUMBER_0  &trans           &trans        &trans              &kp INT_YEN        &kp PERCENT                                                                       &kp LEFT_CONTROL
+            >;
+        };
 
-34
-In file included from <command-line>:
+        ARROW {
+            bindings = <
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW      &kp LC(TAB)              &trans                         &trans            &trans    &kp UP_ARROW    &trans     &trans
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW    &kp RIGHT_ARROW          &kp END  &trans      &kp HOME  &kp LG(UP_ARROW)  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &kp LEFT_COMMAND
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &kp END   &kp LG(DOWN)      &trans    &trans          &trans     &kp LEFT_ALT
+&trans          &trans                  &kp LG(DOWN)      &trans                   &trans   &trans      &trans    &trans                                                 &kp LEFT_CONTROL
+            >;
 
-35
-/tmp/zmk-config/config/roBa.keymap:83:10: fatal error: roBa.dtsi: No such file or directory
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+        };
 
-36
-   83 | #include "roBa.dtsi"
+        MOUSE {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
+            >;
+        };
 
-37
-      |          ^~~~~~~~~~~
+        SCROLL {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
 
-38
-compilation terminated.
+        layer_6 {
+            bindings = <
+&trans             &kp LA(LG(KP_N7))        &kp LA(LC(BACKSPACE))  &kp LA(LG(KP_N9))  &kp LG(LS(NUMBER_4))                                                        &bt BT_SEL 0       &bt BT_SEL 1       &bt BT_SEL 2              &bt BT_SEL 3               &bt BT_SEL 4
+&kp LC(BACKSPACE)  &kp LA(LG(BACKSPACE))    &kp LA(LG(SPACE))      &kp LA(LG(ENTER))  &kp LC(ENTER)         &kp LC(RIGHT_BRACKET)          &kp LG(LC(BACKSLASH))  &kp LC(BACKSLASH)  &kp BACKSPACE      &kp LA(LS(NUMBER_3))      &kp B                      &trans
+&kp LG(LA(LC(Q)))  &kp LA(LG(KP_NUMBER_1))  &kp LC(LA(ENTER))      &kp KP_N3          &kp LC(LA(LG(A)))     &kp LG(LC(RIGHT_BRACKET))      &kp LG(LA(V))          &kp LC(LG(LEFT))   &kp LG(LC(RIGHT))  &kp LA(LG(LEFT_BRACKET))  &kp LA(LG(RIGHT_BRACKET))  &bt BT_CLR
+&mo 7              &mo 0                    &kp LG(LA(PERIOD))     &trans             &trans                &trans                         &kp KP_ENTER           &kp KP_NUMBER_3                                                                            &bt BT_CLR_ALL
+            >;
+        };
 
-39
-CMake Error at /tmp/zmk-config/zephyr/cmake/modules/extensions.cmake:3885 (message):
-
-40
-  failed to preprocess devicetree files (error code 1):
-
-41
-  /tmp/zmk-config/zephyr/boards/arm/seeeduino_xiao_ble/seeeduino_xiao_ble.dts;/tmp/zmk-config/zmk/app/boards/seeeduino_xiao_ble.overlay;/__w/zmk-config-roBa/zmk-config-roBa/boards/shields/roBa/roBa_L.overlay;/tmp/zmk-config/config/roBa.keymap
-
-42
-Call Stack (most recent call first):
-
-43
-  /tmp/zmk-config/zephyr/cmake/modules/dts.cmake:226 (zephyr_dt_preprocess)
-
-44
-  /tmp/zmk-config/zephyr/cmake/modules/zephyr_default.cmake:129 (include)
-
-45
-  /tmp/zmk-config/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)
-
-46
-  /tmp/zmk-config/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)
-
-47
-  CMakeLists.txt:9 (find_package)
-
-48
-
-
-49
-
-
-50
--- Configuring incomplete, errors occurred!
-
-51
-FATAL ERROR: command exited with status 1: /usr/local/bin/cmake -DWEST_PYTHON=/usr/bin/python3 -B/tmp/tmp.W32RD8KOpf -GNinja -DBOARD=seeeduino_xiao_ble -DZMK_CONFIG=/tmp/zmk-config/config -DSHIELD=roBa_L -DZMK_EXTRA_MODULES=/__w/zmk-config-roBa/zmk-config-roBa -S/tmp/zmk-config/zmk/app
-
-52
-Error: Process completed with exit code 1.
-
-roBa_L - seeeduino_xiao_ble Kconfig file
-0s
-roBa_L - seeeduino_xiao_ble Devicetree file
-0s
-Rename artifacts
-0s
-Archive (roBa_L - seeeduino_xiao_ble)
-0s
-Post Cache west modules
-0s
-Post Checkout
-0s
-Stop containers
-7s
-Complete job
-0s
+        iPadmini {
+            bindings = <
+&kp Q           &kp W         &kp E    &kp R                        &kp T                                                        &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A           &kp S         &kp D    &kp F                        &kp G        &kp LG(Z)                        &kp DELETE     &kp H        &kp J  &lt 5 K    &kp L    &mt RIGHT_CONTROL MINUS
+&kp LEFT_SHIFT  &kp Z         &kp C    &kp V                        &kp B        &kp SEMICOLON                    &kp COLON      &kp N        &kp M  &kp COMMA  &kp DOT  &kp LEFT_ALT
+&kp X           &kp LEFT_ALT  &kp TAB  &lt_to_layer_0 6 LANGUAGE_5  &lt 2 SPACE  &lt_to_layer_0 3 LANGUAGE_5      &kp BACKSPACE  &lt 1 ENTER                             &kp RIGHT_GUI
+            >;
+        };
+    };
+};
