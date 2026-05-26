@@ -4,8 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: kumamuk-git
       url-base: https://github.com/kumamuk-git
-    - name: caksoylar
-      url-base: https://github.com/caksoylar
+    - name: badjeff
+      url-base: https://github.com/badjeff
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -15,7 +15,7 @@ manifest:
       remote: kumamuk-git
       revision: main
     - name: zmk-input-behavior-listener
-      remote: caksoylar
+      remote: badjeff
       revision: main
   self:
     path: config
