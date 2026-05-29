@@ -86,6 +86,41 @@
     };
 
     macros {
+        bt_0_mac: bt_0_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &bt BT_SEL 0 &to 0>;
+            label = "BT_0_MAC";
+        };
+
+        bt_1_mac: bt_1_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &bt BT_SEL 1 &to 0>;
+            label = "BT_1_MAC";
+        };
+
+        bt_2_win: bt_2_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &bt BT_SEL 2 &to 7>;
+            label = "BT_2_WIN";
+        };
+
+        bt_3_mac: bt_3_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &bt BT_SEL 3 &to 0>;
+            label = "BT_3_MAC";
+        };
+
+        bt_4_mac: bt_4_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &bt BT_SEL 4 &to 0>;
+            label = "BT_4_MAC";
+        };
+
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -166,19 +201,19 @@
 
         layer_6 {
             bindings = <
-&trans             &kp LA(LG(KP_N7))        &kp LA(LC(BACKSPACE))  &kp LA(LG(KP_N9))  &kp LG(LS(NUMBER_4))                                                        &bt BT_SEL 0       &bt BT_SEL 1       &bt BT_SEL 2              &bt BT_SEL 3               &bt BT_SEL 4
+&trans             &kp LA(LG(KP_N7))        &kp LA(LC(BACKSPACE))  &kp LA(LG(KP_N9))  &kp LG(LS(NUMBER_4))                                                        &bt_0_mac       &bt_1_mac       &bt_2_win              &bt_3_mac               &bt_4_mac
 &kp LC(BACKSPACE)  &kp LA(LG(BACKSPACE))    &kp LA(LG(SPACE))      &kp LA(LG(ENTER))  &kp LC(ENTER)         &kp LC(RIGHT_BRACKET)          &kp LG(LC(BACKSLASH))  &kp LC(BACKSLASH)  &kp BACKSPACE      &kp LA(LS(NUMBER_3))      &kp B                      &trans
 &kp LG(LA(LC(Q)))  &kp LA(LG(KP_NUMBER_1))  &kp LC(LA(ENTER))      &kp KP_N3          &kp LC(LA(LG(A)))     &kp LG(LC(RIGHT_BRACKET))      &kp LG(LA(V))          &kp LC(LG(LEFT))   &kp LG(LC(RIGHT))  &kp LA(LG(LEFT_BRACKET))  &kp LA(LG(RIGHT_BRACKET))  &bt BT_CLR
 &mo 7              &mo 0                    &kp LG(LA(PERIOD))     &trans             &trans                &trans                         &kp KP_ENTER           &kp KP_NUMBER_3                                                                            &bt BT_CLR_ALL
             >;
         };
 
-        iPadmini {
+        WINDOWS {
             bindings = <
-&kp Q           &kp W         &kp E    &kp R                        &kp T                                                        &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A           &kp S         &kp D    &kp F                        &kp G        &kp LG(Z)                        &kp DELETE     &kp H        &kp J  &lt 5 K    &kp L    &mt RIGHT_CONTROL MINUS
-&kp LEFT_SHIFT  &kp Z         &kp C    &kp V                        &kp B        &kp SEMICOLON                    &kp COLON      &kp N        &kp M  &kp COMMA  &kp DOT  &kp LEFT_ALT
-&kp X           &kp LEFT_ALT  &kp TAB  &lt_to_layer_0 6 LANGUAGE_5  &lt 2 SPACE  &lt_to_layer_0 3 LANGUAGE_5      &kp BACKSPACE  &lt 1 ENTER                             &kp RIGHT_GUI
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &kp LC(Z)     &trans  &trans  &trans  &trans  &trans  &mt LEFT_CONTROL MINUS
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans                          &trans
             >;
         };
     };
