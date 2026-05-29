@@ -9,7 +9,7 @@
 };
 
 &trackball {
-    automouse-layer = <4>;
+    automouse-layer = <8>;
     scroll-layers = <5>;
 
     // arrows {
@@ -219,6 +219,15 @@
 &kp A           &kp S         &kp D    &kp F        &kp G        &to 0              &kp DELETE     &kp H        &kp J  &kp K      &kp L    &mt LEFT_CONTROL MINUS
 &kp LEFT_SHIFT  &kp Z         &kp C    &kp V        &kp B        &kp SEMICOLON      &kp COLON      &kp N        &kp M  &kp COMMA  &kp DOT  &kp LEFT_ALT
 &kp X           &kp LEFT_ALT  &kp TAB  &lt 6 GRAVE  &lt 2 SPACE  &lt 3 GRAVE        &kp BACKSPACE  &lt 1 ENTER                             &kp LEFT_COMMAND
+            >;
+        };
+
+        AUTO_MOUSE {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
             >;
         };
     };
